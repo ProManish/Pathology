@@ -56,6 +56,17 @@ const db = new Pool({
 })
 db.connect(()=>{console.log("Connected successfully")});
 
+module.exports = async (req, res) => {
+  try {
+    const client = await pool.connect();
+    // Perform database operations
+    client.release();
+    res.status(200).json({ message: 'Database connected successfully' });
+  } catch (err) {
+    console.error('Database connection error:', err);
+    res.status(500).json({ error: 'Database connection failed' });
+  }
+};
 app.get('/', (req, res) => { res.sendFile(__dirname + '/public/index.html') });
 
 app.post('/register', async (req, res) => {
