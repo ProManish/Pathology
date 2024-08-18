@@ -1,17 +1,19 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
-    /* margin: 0px 255.95px 0px 255.95px; */
-    
+     
     background-color: #bed7dd;
   }
   h1{
      
      
-      margin: 40px 330px;
+      /* margin: 40px 330px; */
+      width: 1500px;
+      text-align: center;
      border-radius: 10px;
      font-family: "Permanent Marker", cursive;
      font-weight: 400;
