@@ -51,8 +51,8 @@ app.use(passport.session());
 //     port: process.env.DB_PORT  ,
 // })
 
-app.set('views', './views');
-app.set('view engine', 'ejs'); // assuming you are using EJS, adjust if you use a different template engine
+// app.set('views', './views');
+// app.set('view engine', 'ejs'); // assuming you are using EJS, adjust if you use a different template engine
 
 const db = new Pool({
     connectionString: process.env.POSTGRES_URL,
