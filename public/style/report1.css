@@ -1,25 +1,6 @@
-body{
+ 
 
-    height: 100vh;
-    width: 100vw;
-}
-*{
-    margin: 0;
-    padding: 0;
-}
-
-/* header::before{
-    content: "";
-    background-image: url("../images/home_bg.png");
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 1;
-    top:0;
-    left: 0;
-} */
-
+   
 input[type="text"]{
     display:none;
 }
@@ -45,8 +26,7 @@ input[type="text"]{
   
   .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+     justify-content: space-between;
   }
   
   .container > div {
@@ -59,8 +39,10 @@ input[type="text"]{
   
   /* Test container styles */
   .container2 {
-     
-    margin: 5px 658px;
+     display: flex;
+     justify-content: center;
+     gap: 4px;
+    /* margin: 5px 658px; */
   }
   
   /* Container2 styles */
@@ -80,20 +62,29 @@ input[type="text"]{
     margin-bottom: 10px;
   }
   
-  input[type="text"],
-  input[type="submit"] {
-    padding: 8px;
-    margin-right: 10px;
-  }
+  
+  
   
   input[type="submit"] {
     background-color: #007bff;
     color: #ffffff;
     border: none;
     cursor: pointer;
+    padding: 10px;
   }
   
   input[type="submit"]:hover {
     background-color: #0056b3;
+  }
+
+  @media (max-width:943px) {
+     .container-res{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:5px
+     }
+     
+    
   }
   

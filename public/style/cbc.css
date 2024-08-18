@@ -1,13 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
     margin: 0px 255.95px 0px 255.95px;
     height: 1350px;
+    width: 1024.1px;
     border: 2px solid black;
-  }
+   }
   .addBody{
     margin: 0;
     height: 1350px;

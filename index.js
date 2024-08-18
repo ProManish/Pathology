@@ -20,7 +20,7 @@ import { pid } from "process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 var app = express();
-var port = 3000;
+var port = 5000;
 var hgb, wbc, neutrophils, lympocytes, eosinophils, monocytes, esr, rbc, hct, mcv, mch, mchc, sd, cv;
 var Patientname;
 var Phoneno, date, Age, Gender, doctor;
