@@ -2,18 +2,16 @@ import express from "express";
 import bodyParser from 'body-parser'
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import pkg from 'pg';
-const { Pool } = pkg;  // Import postgre 
-import dotenv from 'dotenv';
-dotenv.config();
-
+import pg from "pg";  // Import postgre 
 import bcrypt from "bcrypt"; // Import bcrypt.
-// import EJS_INCLUDE_REGEX from 'ejs-include-regex';
+import session from 'express-session'; // Import express-session
+
+
+ // import EJS_INCLUDE_REGEX from 'ejs-include-regex';
 
 import ejs from "ejs";
 
-import session from "express-session";
-import passport from "passport";
+ import passport from "passport";
 import { Strategy } from "passport-local";
 import { pid } from "process";
 
@@ -43,20 +41,18 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// const db = new Pool({
-//     user: process.env.DB_USER  ,
-//     host: process.env.DB_HOST  ,
-//     database: process.env.DB_NAME ,
-//     password: process.env.DB_PASSWORD  ,
-//     port: process.env.DB_PORT  ,
-// })
-
-// app.set('views', './views');
-// app.set('view engine', 'ejs'); // assuming you are using EJS, adjust if you use a different template engine
-
-const db = new Pool({
-    connectionString: process.env.POSTGRES_URL,
+const db = new pg.Client({
+    user: "postgres",
+    host: "localhost",
+    database: "Pathology",
+    password: "Manishmore@98",
+    port: 5432,
 })
+
+app.set('views', './views');
+app.set('view engine', 'ejs'); // assuming you are using EJS, adjust if you use a different template engine
+
+ 
 db.connect(()=>{console.log("Connected successfully")});
 
  app.get('/', (req, res) => { res.sendFile(__dirname + '/public/index.html') });
@@ -807,7 +803,7 @@ passport.deserializeUser((user, cb) => {
     cb(null, user);
 });
 
-app.listen(process.env.PORT, () => { console.log(`port is created at ${port}`) });
+app.listen(3000, () => { console.log(`port is created at ${port}`) });
 
 
 
